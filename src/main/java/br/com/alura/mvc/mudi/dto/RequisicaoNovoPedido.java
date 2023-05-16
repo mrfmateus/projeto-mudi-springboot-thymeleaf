@@ -2,11 +2,19 @@ package br.com.alura.mvc.mudi.dto;
 
 import br.com.alura.mvc.mudi.model.Pedido;
 
+import javax.validation.constraints.NotBlank;
+
 public class RequisicaoNovoPedido {
 
+  @NotBlank
   private String nomeProduto;
+
+  @NotBlank
   private String urlProduto;
-  private String imagemProduto;
+
+  @NotBlank
+  private String urlImagemProduto;
+
   private String descricaoProduto;
 
   public String getNomeProduto() {
@@ -25,12 +33,12 @@ public class RequisicaoNovoPedido {
     this.urlProduto = urlProduto;
   }
 
-  public String getImagemProduto() {
-    return imagemProduto;
+  public String getUrlImagemProduto() {
+    return urlImagemProduto;
   }
 
-  public void setImagemProduto(String imagemProduto) {
-    this.imagemProduto = imagemProduto;
+  public void setUrlImagemProduto(String urlImagemProduto) {
+    this.urlImagemProduto = urlImagemProduto;
   }
 
   public String getDescricaoProduto() {
@@ -45,7 +53,7 @@ public class RequisicaoNovoPedido {
     Pedido pedido = new Pedido();
     pedido.setDescricaoDoProduto(descricaoProduto);
     pedido.setUrlDoProduto(urlProduto);
-    pedido.setUrlDaImagemDoProduto(imagemProduto);
+    pedido.setUrlDaImagemDoProduto(urlImagemProduto);
     pedido.setNomeDoProduto(nomeProduto);
     return pedido;
   }
